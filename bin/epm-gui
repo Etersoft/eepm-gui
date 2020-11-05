@@ -1,0 +1,58 @@
+#!/bin/sh
+#
+# Copyright (C) 2020  Etersoft
+# Copyright (C) 2020  Vitaly Lipatov <lav@etersoft.ru>
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU Affero General Public License for more details.
+#
+# You should have received a copy of the GNU Affero General Public License
+# along with this program. If not, see <http://www.gnu.org/licenses/>.
+#
+
+PROGDIR=$(dirname "$0")
+PROGNAME=$(basename "$0")
+[ "$PROGDIR" = "." ] && PROGDIR=$(pwd)
+
+# will replaced to /usr/share/eepm during install
+SHAREDIR=$PROGDIR
+CONFIGDIR=$PROGDIR/..
+
+print_version()
+{
+        echo "EPM package manager GUI version @VERSION@  https://wiki.etersoft.ru/Epm"
+        echo "Copyright (c) Etersoft 2020"
+        echo "This program may be freely redistributed under the terms of the GNU AGPLv3."
+}
+
+Usage="Usage: epm-gui [options] <command>..."
+Descr="epm-gui - EPM package manager GUI"
+
+EPMVERSION=@VERSION@
+
+# load system wide config
+[ -f /etc/eepm/eepm.conf ] && . /etc/eepm/eepm.conf
+
+if [ -z "$1" ] || [ "$1" = "--help" ] || [ "$1" = "-h" ] ; then
+    print_version
+    echo
+    echo "$Usage $Descr"
+    exit 0
+fi
+
+# gosu
+
+PKG="$1"
+zenity --question --text "Установить пакет $PKG ?"
+ST=$?
+
+if [ "$ST" = "0" ] ; then
+    epm install "$PKG"
+fi

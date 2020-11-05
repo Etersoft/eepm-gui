@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=EPM Package Manager GUI
+Terminal=true
+Encoding=UTF-8
+Icon=eepm-gui.png
+Exec=epm-gui %f
+MimeType=application/x-rpm;application/x-deb;application/x-debian-package
