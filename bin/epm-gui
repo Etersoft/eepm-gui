@@ -25,6 +25,13 @@ PROGNAME=$(basename "$0")
 SHAREDIR=$PROGDIR
 CONFIGDIR=$PROGDIR/..
 
+press()
+{
+    echo
+    echo "Press any key to continue..."
+    read
+}
+
 print_version()
 {
         echo "EPM package manager GUI version @VERSION@  https://wiki.etersoft.ru/Epm"
@@ -44,6 +51,7 @@ if [ -z "$1" ] || [ "$1" = "--help" ] || [ "$1" = "-h" ] ; then
     print_version
     echo
     echo "$Usage $Descr"
+    press
     exit 0
 fi
 
@@ -56,3 +64,5 @@ ST=$?
 if [ "$ST" = "0" ] ; then
     epm install "$PKG"
 fi
+
+press

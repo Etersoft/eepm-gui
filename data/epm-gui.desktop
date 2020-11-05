@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=EPM Package Manager GUI
+GenericName=Package Manager
+Comment=Install packaged software on the system via EPM
+Categories=System;
+StartupNotify=true
+Terminal=true
+Encoding=UTF-8
+Icon=eepm-gui
+Exec=epm-gui %f
+MimeType=application/x-rpm;application/x-redhat-package-manager;application/x-deb;application/x-debian-package;application/x-app-package;
+;application/x-app-package;application/vnd.flatpak;application/vnd.flatpak.repo;application/vnd.flatpak.ref;

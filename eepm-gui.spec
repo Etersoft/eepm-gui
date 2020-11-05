@@ -18,6 +18,8 @@ BuildArchitectures: noarch
 Requires: eepm
 Requires: zenity
 
+Provides: epm-gui = %name-%version
+
 %description
 Etersoft EPM package manager GUI is a user unterface to the main eepm functions,
 like install/remove packages and set thirdside applications from a application list.
@@ -32,6 +34,7 @@ like install/remove packages and set thirdside applications from a application l
 %doc README.md LICENSE
 %_bindir/epm-gui
 %_desktopdir/epm-gui.desktop
+%_pixmapsdir/epm-gui.png
 
 %changelog
 * Thu Nov 05 2020 Vitaly Lipatov <lav@altlinux.ru> 0.1-alt1
