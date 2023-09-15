@@ -11,3 +11,8 @@ http://wiki.etersoft.ru/Epm
 
 Please e-mail me:
 lav@etersoft.ru
+
+TODO:
+packageinstall
+
+pkexec (see anydesk)

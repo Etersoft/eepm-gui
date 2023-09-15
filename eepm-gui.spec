@@ -17,6 +17,7 @@ BuildArchitectures: noarch
 
 Requires: eepm
 Requires: zenity
+Requires: shared-mime-info
 
 Provides: epm-gui = %name-%version
 
