@@ -1,8 +1,11 @@
 [Desktop Entry]
 Type=Application
 Name=EPM Package Manager GUI
+Name[ru]=Установка пакетов через EPM
 GenericName=Package Manager
+GenericName[ru]=Пакетный менеджер
 Comment=Install packaged software on the system via EPM
+Comment[ru]=Установить пакет через EPM
 Categories=System;
 StartupNotify=true
 Terminal=true
